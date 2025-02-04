@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { Alert, UserCard } from '@/components';
-import { fetchUsers } from '../utils/api';
+import { fetchUsers } from '@/utils/api';
 function UsersPage() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
