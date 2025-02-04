@@ -11,7 +11,7 @@ export async function fetchUsers() {
   
   export async function fetchUserPosts(userId) {
     try {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/posts?id=${userId}`);
+      const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
       if (!res.ok) throw new Error("Failed to fetch posts");
       return await res.json();
     } catch (error) {

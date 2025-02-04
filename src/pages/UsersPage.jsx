@@ -20,7 +20,7 @@ function UsersPage() {
   return (
     <div className='dark:bg-gray-900 p-11 bg-gray-100'>
       {error && <Alert message={error} alertType="Error"/>}
-      <div className='grid sm:grid-cols-2 lg:grid-cols-5 gap-5'>
+      <div className='grid justify-items-center sm:grid-cols-2 lg:grid-cols-5 gap-5'>
       {users?.map((user) => (<UserCard key={user.id} data={user}/>))}
       </div>
     </div>
