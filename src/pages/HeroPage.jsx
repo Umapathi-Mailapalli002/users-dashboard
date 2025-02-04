@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button } from "../components/index";
+import { Button } from "@/components";
 
 const Hero = () => {
   return (

@@ -13,16 +13,16 @@ function UserCard({data}) {
       </div>
 
       {/* User Details Section */}
-      <div className="mt-20 text-center text-sm">
+      <div className="mt-16 text-center text-sm">
         <p className="mt-2 text-gray-700 dark:text-gray-300">ID: {id}</p>{" "}
-        <h3 className="font-semibold">{name}</h3>
+        <h3 className="font-semibold">{"👤"+name}</h3>
         <p className="text-gray-600 dark:text-gray-300">
-          {email}
+          {"📧 "+email}
         </p>
         <p className="text-gray-500 dark:text-gray-400">
-            {address?.street} Street, {address?.suite}, {address?.city}, {address?.zipcode}
+        📍{address?.street} Street, {address?.suite}, {address?.city}, {address?.zipcode}
           </p>
-        <p className="text-blue-500 dark:text-blue-200">{company?.name}</p>
+        <p className="text-blue-500 dark:text-blue-200">{"💼 "+company?.name}</p>
         
       </div>
     </div>

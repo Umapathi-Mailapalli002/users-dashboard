@@ -5,6 +5,8 @@ import Navbar from "./Navbar";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
 import InputBox from "./InputBox";
+import UserCard from "./UserCard";
+import Alert from "./Alert";
 export {
     Button,
     SearchBar,
@@ -12,5 +14,7 @@ export {
     ModeToggle,
     Navbar,
     Pagination,
-    InputBox
+    InputBox,
+    UserCard,
+    Alert
 }
