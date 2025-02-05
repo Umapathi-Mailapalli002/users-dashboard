@@ -1,11 +1,14 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
-import Link from 'next/link'
 import { Button } from "@/components";
 
 
 const Hero = () => {
-  
+  const router = useRouter();
+  const handleUserClick = () => {
+    router.push(`/users`); // ✅ Navigate to user profile
+  };
   return (
     <>
       <div  className="relative bg-gradient-to-br from-blue-200 via-cyan-100 to-blue-300 text-gray-800 dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-black dark:text-gray-100 min-h-screen flex items-center justify-center px-6 sm:px-12">
@@ -28,11 +31,11 @@ const Hero = () => {
           </p>
           {/* Call to Action */}
           <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
-            <Link href="/dashboard"
+            <Button onClick={handleUserClick}
               className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold shadow-lg hover:opacity-90 transition dark:from-green-400 dark:via-teal-500 dark:to-blue-500"
             >
               Get Started
-            </Link>
+            </Button>
             <button className="bg-transparent border-2 border-gray-400 text-blue-400 px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold hover:bg-gray-100 transition dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
               Explore Features
             </button>
