@@ -1,26 +1,31 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Alert, SearchBar, UserCard } from "@/components";
+import { Alert, Loading, SearchBar, UserCard } from "@/components";
 import { fetchUsers } from "@/utils/api";
 function UsersPage() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [searchQuery, setSearchQuery] = useState(""); // Search state
 
   useEffect(() => {
     const loadUsers = async () => {
+      setIsLoading(true);
       try {
         const data = await fetchUsers();
         if (data.length === 0) throw new Error("No users found");
         setUsers(data);
       } catch (err) {
         setError("Error on fetching Users data");
+      }finally{
+        setIsLoading(false);
       }
     };
     loadUsers();
   }, []);
 
+  
   //Debouncing
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -36,9 +41,11 @@ function UsersPage() {
       user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       user.email.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
+  if (isLoading) {
+    return <Loading />
+  }
   return (
-    <div className="h-[100vh]">
+    <div className="min-h-screen">
       {error && <Alert message={error} alertType="Error" />}
       <div className="my-16 flex justify-center">
         <SearchBar
