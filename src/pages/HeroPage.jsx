@@ -28,7 +28,7 @@ const Hero = () => {
           </p>
           {/* Call to Action */}
           <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
-            <Link href="/users"
+            <Link href="/dashboard"
               className="bg-gradient-to-r from-blue-500 via-teal-400 to-green-400 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold shadow-lg hover:opacity-90 transition dark:from-green-400 dark:via-teal-500 dark:to-blue-500"
             >
               Get Started

@@ -4,7 +4,7 @@ import { CgProfile } from "react-icons/cg";
 function UserCard({data}) {
     const {name, id, email, address, company} = data;
   return (
-    <div className="border h-72 w-64 p-2 rounded-lg shadow-lg hover:scale-105 transition-all dark:bg-gray-800 dark:text-gray-300">
+    <div className="border h-72 w-64 p-2 cursor-pointer rounded-lg shadow-lg hover:scale-105 transition-all dark:bg-gray-800 dark:text-gray-300">
       {/* Top Gradient Section */}
       <div className="h-16 flex justify-center items-center bg-gradient-to-b from-[#91baff] to-[#205fff] dark:from-indigo-800 dark:to-indigo-900">
         <div className="mt-16 rounded-full bg-gray-200 dark:bg-gray-500 p-px">

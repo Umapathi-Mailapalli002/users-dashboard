@@ -1,8 +1,9 @@
+import axios from "axios";
+
 export async function fetchUsers() {
     try {
-      const res = await fetch('https://jsonplaceholder.typicode.com/users');
-      if (!res.ok) throw new Error("Failed to fetch users");
-      return await res.json();
+      const res = await axios.get('https://jsonplaceholder.typicode.com/users');
+      return res.data;
     } catch (error) {
       console.error("Error fetching users:", error);
       return [];
@@ -11,9 +12,8 @@ export async function fetchUsers() {
   
   export async function fetchUserPosts(userId) {
     try {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
-      if (!res.ok) throw new Error("Failed to fetch posts");
-      return await res.json();
+      const res = await axios.get(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+      return res.data;
     } catch (error) {
       console.error("Error fetching posts:", error);
       return [];
