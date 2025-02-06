@@ -1,12 +1,13 @@
 "use client"
 import React, {useState, useEffect} from "react";
 import { CgProfile } from "react-icons/cg";
-import { Loading, Alert, PostCard } from "@/components";
+import { Loading, Alert, PostCard, Pagination } from "@/components";
 import { fetchUser, fetchUserPosts } from "@/utils/api";
 function UserPosts({params}) {
    const [user, setUser] = useState({});
    const [posts, setPosts] = useState([]);
     const [error, setError] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
     const id = React.use(params).id;
     useEffect(() => {
@@ -42,29 +43,9 @@ function UserPosts({params}) {
       if (isLoading) {
         return <Loading />
       }
-  // const user = {
-  //   id: 1,
-  //   name: "Leanne Graham",
-  //   username: "Bret",
-  //   email: "Sincere@april.biz",
-  //   address: {
-  //     street: "Kulas Light",
-  //     suite: "Apt. 556",
-  //     city: "Gwenborough",
-  //     zipcode: "92998-3874",
-  //     geo: {
-  //       lat: "-37.3159",
-  //       lng: "81.1496",
-  //     },
-  //   },
-  //   phone: "1-770-736-8031 x56442",
-  //   website: "hildegard.org",
-  //   company: {
-  //     name: "Romaguera-Crona",
-  //     catchPhrase: "Multi-layered client-server neural-net",
-  //     bs: "harness real-time e-markets",
-  //   },
-  // };
+      const pageSize = 5;
+      const startIndex = (currentPage - 1) * pageSize;
+      const paginatedData = posts?.slice(startIndex, startIndex + pageSize);    
 
   return (
     <div className="p-6 max-w-3xl mx-auto bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-lg shadow-lg transition-colors duration-300">
@@ -116,12 +97,12 @@ function UserPosts({params}) {
 
       {/* User Posts Section */}
       <h3 className="text-3xl font-bold text-center my-6">Posts</h3>
-      {posts && posts.length > 0 ? <div className="flex flex-wrap gap-4 justify-center">
-        {posts.map((post) => (<PostCard key={post.id} post={post}/>))}
-       
+      {paginatedData && paginatedData.length > 0 ? <div className="flex flex-wrap gap-4 justify-center">
+        {paginatedData.map((post) => (<PostCard key={post.id} post={post}/>))}
       </div> : <p className="text-center text-gray-600 dark:text-gray-300">
             No users found.
           </p>}
+          <Pagination totalItems={posts.length} pageSize={pageSize} onPageChange={(newpage) => setCurrentPage(newpage)} currentPage={currentPage}/>
     </div>
   );
 }
