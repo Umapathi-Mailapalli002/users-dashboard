@@ -92,6 +92,7 @@ Here are some sample demo images included in the project:
 - ![Demo 4](public/demo4.png)
 - ![Demo 5](public/demo5.png)
 - ![Demo 6](public/demo6.png)
+- ![Demo 7](public/demo7.png)
 
 ## Application Flow
 1. Fetches user data from the Users API and displays them as cards.
