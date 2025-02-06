@@ -131,4 +131,4 @@ This project successfully implements a functional and responsive Users & Posts D
 
 ---
 **Author:** Umapathi Mailapali  
-**GitHub:** [Your GitHub Profile](https://github.com/Umapathi-Mailapalli002)
+**GitHub:** [GitHub Profile](https://github.com/Umapathi-Mailapalli002)
