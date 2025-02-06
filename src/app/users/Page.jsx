@@ -56,7 +56,7 @@ function UsersPage() {
       {/* Show error alert if there is an error */}
       {error && <Alert message={error} alertType="Error" />}
       {/* Back button */}
-      <button onClick={() => router.back()} title="back" className="dark:text-gray-300 text-gray-600 text-4xl ml-10">&#8676;</button>
+      <button onClick={() => router.back()} title="back" className="dark:text-gray-300 text-gray-600 text-4xl ml-6 mt-6">&#8676;</button>
       {/* Search bar */}
       <div className="my-16 flex justify-center">
         <SearchBar
