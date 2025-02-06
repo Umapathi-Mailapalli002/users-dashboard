@@ -45,7 +45,7 @@ function UsersPage() {
     return <Loading />
   }
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-20">
       {error && <Alert message={error} alertType="Error" />}
       <div className="my-16 flex justify-center">
         <SearchBar

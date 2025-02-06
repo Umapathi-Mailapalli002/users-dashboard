@@ -6,7 +6,7 @@ import {
 
 function Navbar() {
   return (
-    <nav className="w-full relative dark:bg-gray-900  bg-gray-100 flex items-center h-16">
+    <nav className="w-full relative dark:bg-gray-900 shadow-md dark:shadow-gray-800 bg-gray-100 flex items-center h-16">
       <div className="absolute right-5">
         <ModeToggle textClass="hidden" />
       </div>

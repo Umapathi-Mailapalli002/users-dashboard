@@ -10,6 +10,16 @@ export async function fetchUsers() {
       return [];
     }
   }
+export async function fetchUser(id) {
+    try {
+      const res = await axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`);
+      console.log(res)
+      return res.data;
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      return [];
+    }
+  }
   
   export async function fetchUserPosts(userId) {
     try {
