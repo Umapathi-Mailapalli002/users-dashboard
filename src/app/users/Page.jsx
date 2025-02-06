@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Alert, Loading, SearchBar, UserCard } from "@/components";
+import { useRouter } from 'next/navigation';
 import { fetchUsers } from "@/utils/api";
 function UsersPage() {
   const [users, setUsers] = useState([]);
@@ -8,6 +9,7 @@ function UsersPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [searchQuery, setSearchQuery] = useState(""); // Search state
+  const router = useRouter();
 
   useEffect(() => {
     const loadUsers = async () => {
@@ -47,6 +49,7 @@ function UsersPage() {
   return (
     <div className="min-h-screen pb-20">
       {error && <Alert message={error} alertType="Error" />}
+      <button onClick={() => router.back()} title="back" className="dark:text-gray-300 text-gray-600 text-4xl ml-10">&#8676;</button>
       <div className="my-16 flex justify-center">
         <SearchBar
           placeholder="search by name or email"
