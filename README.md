@@ -87,9 +87,11 @@ users-dashboard/
 Here are some sample demo images included in the project:
 
 - ![Demo 1](public/demo1.png)
-- ![Demo 2](public/demo1.png)
-- ![Demo 3](public/demo1.png)
-- ![Demo 4](public/demo1.png)
+- ![Demo 2](public/demo2.png)
+- ![Demo 3](public/demo3.png)
+- ![Demo 4](public/demo4.png)
+- ![Demo 5](public/demo5.png)
+- ![Demo 6](public/demo6.png)
 
 ## Application Flow
 1. Fetches user data from the Users API and displays them as cards.
