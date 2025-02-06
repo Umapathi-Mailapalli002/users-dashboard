@@ -7,6 +7,7 @@ import SearchBar from "./SearchBar";
 import InputBox from "./InputBox";
 import UserCard from "./UserCard";
 import Alert from "./Alert";
+import PostCard from "./PostCard";
 export {
     Button,
     SearchBar,
@@ -16,5 +17,6 @@ export {
     Pagination,
     InputBox,
     UserCard,
-    Alert
+    Alert,
+    PostCard
 }

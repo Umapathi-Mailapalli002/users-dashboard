@@ -10,9 +10,9 @@ export async function fetchUsers() {
       return [];
     }
   }
-export async function fetchUser(id) {
+export async function fetchUser(userId) {
     try {
-      const res = await axios.get(`https://jsonplaceholder.typicode.com/users?id=${id}`);
+      const res = await axios.get(`https://jsonplaceholder.typicode.com/users?id=${userId}`);
       console.log(res)
       return res.data;
     } catch (error) {
