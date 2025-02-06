@@ -4,7 +4,7 @@ function PostCard({post}) {
     const {title, body} = post || "";
   return (
     <div>
-      <div className="border h-72 w-72 p-5  rounded-lg shadow-lg hover:scale-105 transition-all bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
+      <div className="border overflow-hidden h-72 w-72 p-4  rounded-lg shadow-lg hover:scale-105 transition-all bg-white dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
         <h2 className="text-center font-serif mb-6 font-semibold text-gray-800 dark:text-gray-200">
           {title}
         </h2>
